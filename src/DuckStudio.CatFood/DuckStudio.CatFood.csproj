@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Title>Catfood</Title>
+    <Authors>DuckStudio</Authors>
+    <Version>2.0.0</Version>
+    <PackageProjectUrl>https://github.com/DuckDuckStudio/DuckStudio.CatFood/</PackageProjectUrl>
+    <Description>该包是 Python 库 catfood 在 C# 中的实现，包含一些控制台应用程序的常用代码。</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/DuckDuckStudio/DuckStudio.CatFood/</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Copyright>版权所有 (c) 2026 鸭鸭「カモ」</Copyright>
+    <PackageReleaseNotes>初始实现，有关和 Python 库的对比请参阅 README.md</PackageReleaseNotes>
+    <PackageTags>GitHub,Console,Functions</PackageTags>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <RepositoryType>git</RepositoryType>
+    <PackageIcon>catfood.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\icon\catfood.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\..\NOTICE.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+	<None Include="..\..\LICENSE">
+		<Pack>True</Pack>
+		<PackagePath>\</PackagePath>
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Octokit" Version="14.0.0" />
+    <PackageReference Include="Spectre.Console" Version="0.54.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Strings.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
