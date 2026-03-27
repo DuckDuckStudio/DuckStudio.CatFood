@@ -29,7 +29,7 @@ namespace DuckStudio.CatFood.Functions
         /// <summary>
         /// <para>带前缀输出内容。</para>
         /// <para>输出前缀使用 <see cref="AnsiConsole.Markup(string)"/>；输出内容使用方法依照 <paramref name="markuped"/> 参数定义</para>
-        /// <para>如果你需要带头输出多行内容，请使用 <see cref="PrintMultilineWithPrefix(string, string, string?)"/> (以及它的其他重载)</para>
+        /// <para>如果你需要带头输出多行内容，请使用 <see cref="PrintMultilineWithPrefix(string, string, bool, string?)"/> (以及它的其他重载)</para>
         /// </summary>
         /// <param name="content">内容</param>
         /// <param name="prefix">前缀</param>
