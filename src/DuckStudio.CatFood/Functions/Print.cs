@@ -28,26 +28,23 @@ namespace DuckStudio.CatFood.Functions
 
         /// <summary>
         /// <para>带前缀输出内容。</para>
-        /// <para>输出前缀使用 <see cref="AnsiConsole.Markup(string)"/>；输出内容使用方法依照 <paramref name="markuped"/> 参数定义</para>
-        /// <para>如果你需要带头输出多行内容，请使用 <see cref="PrintMultilineWithPrefix(string, string, string?)"/> (以及它的其他重载)</para>
+        /// <para>输出使用 <see cref="AnsiConsole.MarkupLine(string)"/>。</para>
+        /// <para>如果你需要带头输出多行内容，请使用 <see cref="PrintMultilineWithPrefix(string, string, bool, string?)"/> (以及它的其他重载)</para>
         /// </summary>
         /// <param name="content">内容</param>
         /// <param name="prefix">前缀</param>
         /// <param name="markuped">
         /// <para>是否对内容启用标记。</para>
-        /// <para>对于内容，如果启用标记则使用 <see cref="AnsiConsole.MarkupLine(string)"/> 输出，禁用标记则使用 <see cref="Console.WriteLine(string?)"/> 输出</para>
+        /// <para>如果禁用标记会在输出前使用 <see cref="Markup.Escape(string)"/> 转义内容。</para>
         /// </param>
         public static void PrintWithPrefix(string content, string prefix, bool markuped = false)
         {
-            AnsiConsole.Markup(prefix);
-            if (markuped)
+            if (!markuped)
             {
-                AnsiConsole.MarkupLine(content);
+                content = Markup.Escape(content);
             }
-            else
-            {
-                Console.WriteLine($" {content}");
-            }
+
+            AnsiConsole.MarkupLine($"{prefix} {content}");
         }
 
         /// <summary>
