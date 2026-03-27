@@ -42,7 +42,7 @@ namespace DuckStudio.CatFood.Functions
             AnsiConsole.Markup(prefix);
             if (markuped)
             {
-                AnsiConsole.MarkupLine(content);
+                AnsiConsole.MarkupLine($" {content}");
             }
             else
             {
