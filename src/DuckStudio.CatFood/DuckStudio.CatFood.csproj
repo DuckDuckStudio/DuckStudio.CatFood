@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <Title>Catfood</Title>
     <Authors>DuckStudio</Authors>
-    <Version>2.0.0</Version>
+    <Version>2.0.0.1</Version>
     <PackageProjectUrl>https://github.com/DuckDuckStudio/DuckStudio.CatFood/</PackageProjectUrl>
     <Description>该包是 Python 库 catfood 在 C# 中的实现，包含一些控制台应用程序的常用代码。</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -15,7 +15,11 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Copyright>版权所有 (c) 2026 鸭鸭「カモ」</Copyright>
-    <PackageReleaseNotes>初始实现，有关和 Python 库的对比请参阅 README.md</PackageReleaseNotes>
+    <PackageReleaseNotes>此版本对 Functions/Print 中的 PrintWithPrefix 方法做了一些修改
+
+- fix: 补上带前缀输出时，启用标记的情况下，前缀后面缺少的空格
+- refactor: 统一使用 AnsiConsole.MarkupLine(string) 输出带前缀内容
+- docs: 修正 PrintWithPrefix 方法的文档中的一处引用</PackageReleaseNotes>
     <PackageTags>GitHub,Console,Functions</PackageTags>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <RepositoryType>git</RepositoryType>
