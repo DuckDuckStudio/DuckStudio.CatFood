@@ -1,10 +1,10 @@
 该库的实现离不开这些项目，感谢开源社区！
-- [Spectre.Console](https://www.nuget.org/packages/Spectre.Console/) - MIT
+- [Spectre.Console.Ansi](https://www.nuget.org/packages/Spectre.Console.Ansi/) - MIT
 - [Octokit](https://www.nuget.org/packages/Octokit/) - MIT
 
 ---
 
-## Spectre.Console
+## Spectre.Console.Ansi
 
 https://github.com/spectreconsole/spectre.console/blob/main/LICENSE.md
 

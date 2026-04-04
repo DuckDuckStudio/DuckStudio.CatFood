@@ -100,7 +100,7 @@ public static void PrintWithPrefix(string content, string prefix, bool markuped 
 
 ## 依赖
 该库的实现离不开这些项目，感谢开源社区！
-- [Spectre.Console](https://www.nuget.org/packages/Spectre.Console/) - MIT
+- [Spectre.Console.Ansi](https://www.nuget.org/packages/Spectre.Console.Ansi/) - MIT
 - [Octokit](https://www.nuget.org/packages/Octokit/) - MIT
 
 有关这些依赖的许可文件，请参见 [NOTICE.md](./NOTICE.md)。
