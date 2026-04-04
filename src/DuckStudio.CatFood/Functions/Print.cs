@@ -28,23 +28,23 @@ namespace DuckStudio.CatFood.Functions
 
         /// <summary>
         /// <para>带前缀输出内容。</para>
-        /// <para>输出使用 <see cref="AnsiConsole.MarkupLine(string)"/>。</para>
+        /// <para>输出使用 <see cref="SystemConsoleExtensions.MarkupLine(string)"/>。</para>
         /// <para>如果你需要带头输出多行内容，请使用 <see cref="PrintMultilineWithPrefix(string, string, bool, string?)"/> (以及它的其他重载)</para>
         /// </summary>
         /// <param name="content">内容</param>
         /// <param name="prefix">前缀</param>
         /// <param name="markuped">
         /// <para>是否对内容启用标记。</para>
-        /// <para>如果禁用标记会在输出前使用 <see cref="Markup.Escape(string)"/> 转义内容。</para>
+        /// <para>如果禁用标记会在输出前使用 <see cref="AnsiMarkup.Escape(string?)"/> 转义内容。</para>
         /// </param>
         public static void PrintWithPrefix(string content, string prefix, bool markuped = false)
         {
             if (!markuped)
             {
-                content = Markup.Escape(content);
+                content = AnsiMarkup.Escape(content);
             }
 
-            AnsiConsole.MarkupLine($"{prefix} {content}");
+            Console.MarkupLine($"{prefix} {content}");
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace DuckStudio.CatFood.Functions
         /// </summary>
         /// <param name="content">多行内容</param>
         /// <param name="prefix">前缀</param>
-        /// <param name="markuped">对于内容，如果启用标记则使用 <see cref="AnsiConsole.MarkupLine(string)"/> 输出，禁用标记则使用 <see cref="Console.WriteLine(string?)"/> 输出</param>
+        /// <param name="markuped">是否对内容启用标记</param>
         /// <param name="newLine">换行符，默认为 <c>\n</c></param>
         public static void PrintMultilineWithPrefix(string content, string prefix, bool markuped = false, string? newLine = "\n")
         {
@@ -64,7 +64,7 @@ namespace DuckStudio.CatFood.Functions
         /// </summary>
         /// <param name="content">每项为一行的数组</param>
         /// <param name="prefix">前缀</param>
-        /// <param name="markuped">对于内容，如果启用标记则使用 <see cref="AnsiConsole.MarkupLine(string)"/> 输出，禁用标记则使用 <see cref="Console.WriteLine(string?)"/> 输出</param>
+        /// <param name="markuped">是否对内容启用标记</param>
         public static void PrintMultilineWithPrefix(string[] content, string prefix, bool markuped = false)
         {
             foreach (string line in content)
