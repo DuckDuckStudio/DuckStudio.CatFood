@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <Title>CatFood</Title>
     <Authors>DuckStudio</Authors>
-    <Version>2.0.0.2</Version>
+    <Version>2.0.0.3</Version>
     <PackageProjectUrl>https://github.com/DuckDuckStudio/DuckStudio.CatFood/</PackageProjectUrl>
     <Description>该包是 Python 库 catfood 在 C# 中的实现，包含一些控制台应用程序的常用代码。</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -15,7 +15,7 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Copyright>版权所有 (c) 2026 鸭鸭「カモ」</Copyright>
-    <PackageReleaseNotes>https://github.com/DuckDuckStudio/DuckStudio.CatFood/releases/tag/2.0.0.2</PackageReleaseNotes>
+    <PackageReleaseNotes>https://github.com/DuckDuckStudio/DuckStudio.CatFood/releases/tag/2.0.0.3</PackageReleaseNotes>
     <PackageTags>GitHub,Console,Functions</PackageTags>
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
     <PackageIcon>catfood.png</PackageIcon>
