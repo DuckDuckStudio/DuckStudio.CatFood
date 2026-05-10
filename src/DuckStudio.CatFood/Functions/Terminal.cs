@@ -109,10 +109,6 @@ namespace DuckStudio.CatFood.Functions
                                         Thread.Sleep(1000);
                                     }
                                 }
-                                catch (ThreadInterruptedException)
-                                {
-                                    throw;
-                                }
                                 finally
                                 {
                                     Console.Write("\r");
