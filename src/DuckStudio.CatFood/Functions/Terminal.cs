@@ -54,7 +54,8 @@ namespace DuckStudio.CatFood.Functions
                         CreateNoWindow = true
                     };
 
-                    using var process = new Process { StartInfo = processStartInfo };
+                    using Process process = new();
+                    process.StartInfo = processStartInfo;
                     process.Start();
 
                     string output = process.StandardOutput.ReadToEnd();
@@ -108,10 +109,6 @@ namespace DuckStudio.CatFood.Functions
                                         Console.Write($"\r{i}秒后重试...");
                                         Thread.Sleep(1000);
                                     }
-                                }
-                                catch (ThreadInterruptedException)
-                                {
-                                    throw;
                                 }
                                 finally
                                 {
