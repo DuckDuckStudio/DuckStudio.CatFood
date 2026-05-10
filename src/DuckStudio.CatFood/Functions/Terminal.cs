@@ -54,7 +54,8 @@ namespace DuckStudio.CatFood.Functions
                         CreateNoWindow = true
                     };
 
-                    using var process = new Process { StartInfo = processStartInfo };
+                    using Process process = new();
+                    process.StartInfo = processStartInfo;
                     process.Start();
 
                     string output = process.StandardOutput.ReadToEnd();
