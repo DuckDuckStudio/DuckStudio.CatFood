@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     <Title>CatFood</Title>
     <Authors>DuckStudio</Authors>
-    <Version>2.0.0.5</Version>
+    <Version>2.0.0.6</Version>
     <PackageProjectUrl>https://github.com/DuckDuckStudio/DuckStudio.CatFood/</PackageProjectUrl>
     <Description>该包是 Python 库 catfood 在 C# 中的实现，包含一些控制台应用程序的常用代码。</Description>
     <PackageReadmeFile>README.md</PackageReadmeFile>
