@@ -45,7 +45,7 @@
 
   <ItemGroup>
     <PackageReference Include="Octokit" Version="14.0.0" />
-    <PackageReference Include="Spectre.Console" Version="0.57.0" />
+    <PackageReference Include="Spectre.Console" Version="0.57.1" />
   </ItemGroup>
 
   <ItemGroup>
