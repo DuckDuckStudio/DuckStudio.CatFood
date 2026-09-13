@@ -25,7 +25,7 @@
                 return null;
             }
 
-            if (input.All(char.IsDigit))
+            if (input.All(char.IsAsciiDigit))
             {
                 return input;
             }
@@ -35,9 +35,10 @@
                 string[] segments = input.Split('#')[0].Split('/');
                 for (int i = segments.Length - 1; i >= 0; i--)
                 {
-                    if (segments[i].All(char.IsDigit))
+                    string segment = segments[i].TrimStart('0');
+                    if (!string.IsNullOrWhiteSpace(segment) && segment.All(char.IsAsciiDigit))
                     {
-                        return segments[i];
+                        return segment;
                     }
                 }
             }
