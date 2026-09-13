@@ -36,7 +36,7 @@
                 for (int i = segments.Length - 1; i >= 0; i--)
                 {
                     string segment = segments[i].TrimStart('0');
-                    if (segment.All(char.IsAsciiDigit))
+                    if (!string.IsNullOrWhiteSpace(segment) && segment.All(char.IsAsciiDigit))
                     {
                         return segment;
                     }
