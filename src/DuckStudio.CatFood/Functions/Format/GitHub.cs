@@ -35,9 +35,10 @@
                 string[] segments = input.Split('#')[0].Split('/');
                 for (int i = segments.Length - 1; i >= 0; i--)
                 {
-                    if (segments[i].All(char.IsDigit))
+                    string segment = segments[i].TrimStart('0');
+                    if (segment.All(char.IsDigit))
                     {
-                        return segments[i];
+                        return segment;
                     }
                 }
             }
