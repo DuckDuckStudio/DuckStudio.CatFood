@@ -45,8 +45,8 @@ namespace DuckStudio.CatFood.Tests.Functions
         private static string[] GetShellCommand(string command)
         {
             return OperatingSystem.IsWindows()
-                ? ["cmd", "/c", command]
-                : ["sh", "-c", command];
+                ? ["cmd", "/c", $"\"{command}\""]
+                : ["sh", "-c", $"\"{command}\""];
         }
     }
 }
