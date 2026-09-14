@@ -33,13 +33,19 @@ namespace DuckStudio.CatFood.Functions
         /// </summary>
         /// <param name="command">需要运行的命令</param>
         /// <param name="retry">重试前的等待时间，<c>-1</c> 表示不重试</param>
+        /// <param name="maxRetry">
+        /// <para>最大重试次数。<c>-1</c> 表示不限重试次数；<c>0</c> 表示不重试（等同于 <c>retry=-1</c>）</para>
+        /// <para>注意这是重试次数不是运行次数，运行次数要 <c>+1</c>。</para>
+        /// </param>
         /// <returns>退出代码</returns>
-        public static int RunCommand(string[] command, int retry = -1)
+        public static int RunCommand(string[] command, int retry = -1, int maxRetry = -1)
         {
             if (command.Length == 0)
             {
                 throw new ArgumentException("命令不能为空", nameof(command));
             }
+
+            int retryCount = 0;
 
             while (true)
             {
@@ -101,6 +107,12 @@ namespace DuckStudio.CatFood.Functions
                                 }
                             }
 
+                            if (maxRetry == retryCount)
+                            {
+                                Print.PrintWithPrefix("已达到最大重试次数", Print.MSHead.Error);
+                                return process.ExitCode;
+                            }
+
                             if (retry > 0)
                             {
                                 try
@@ -130,6 +142,7 @@ namespace DuckStudio.CatFood.Functions
                     throw;
                 }
 
+                retryCount++;
                 Print.PrintWithPrefix("正在重试 ...", Print.MSHead.Information);
             }
         }
