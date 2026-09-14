@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DuckStudio.CatFood\DuckStudio.CatFood.csproj" />
+    <ProjectReference Include="../DuckStudio.CatFood/DuckStudio.CatFood.csproj" />
   </ItemGroup>
 
 </Project>
