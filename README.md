@@ -4,12 +4,12 @@
 
 ## 和 Python 库的区别
 
-> 本包的当前实现对应 Python 库的 2.0.0 版本。
+> 本包的当前实现对应 Python 库的 2.2.0 版本。
 
 | 功能 | Python | C# |
 |-----|-----|-----|
 | `functions.exceptions.*` | :white_check_mark: | :white_check_mark: |
-| `functions.format.github` | :white_check_mark: | :white_check_mark:[*](#functionsformatgithub) |
+| `functions.format.github` | :white_check_mark: | :white_check_mark: |
 | `functions.github.api` | :white_check_mark: | [部分支持](#functionsgithubapi) |
 | `functions.constant` | :white_check_mark: | :white_check_mark: |
 | `functions.files` | :white_check_mark: | :white_check_mark: |
@@ -17,13 +17,6 @@
 | `functions.terminal` | :white_check_mark: | :white_check_mark: |
 
 ### 命名变化 和 实现区别
-
-<span id="functionsformatgithub"></span>
-#### `Functions.Format.GitHub`
-
-1、`ResolvesIssue()` 方法还支持使用 `int` 值作为输入参数，Python 包在未来也将支持（[DuckDuckStudio/catfood#15](https://github.com/DuckDuckStudio/catfood/issues/15)）。  
-
----
 
 <span id="functionsgithubapi"></span>
 #### `Functions.GitHub.Api`
