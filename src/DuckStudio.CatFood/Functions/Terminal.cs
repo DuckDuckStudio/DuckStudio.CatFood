@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text.RegularExpressions;
+using Spectre.Console;
 
 namespace DuckStudio.CatFood.Functions
 {
@@ -79,8 +80,9 @@ namespace DuckStudio.CatFood.Functions
                     else
                     {
                         Print.PrintWithPrefix(
-                            $"运行 [blue]{string.Join(" ", command)}[/] 失败，[blue]{command[0]}[/] 返回非零退出代码 [blue]{process.ExitCode}[/]",
-                            Print.MSHead.Error
+                            $"运行 [blue]{Markup.Escape(string.Join(" ", command))}[/] 失败，[blue]{command[0]}[/] 返回非零退出代码 [blue]{process.ExitCode}[/]",
+                            Print.MSHead.Error,
+                            markuped: true
                         );
 
                         if (retry < 0) // 不重试
@@ -124,7 +126,7 @@ namespace DuckStudio.CatFood.Functions
                 }
                 catch (OperationCanceledException)
                 {
-                    Print.PrintWithPrefix($"终止运行命令 [blue]{string.Join(" ", command)}[/]，因为收到了 Ctrl + C (OperationCanceledException)", Print.MSHead.Error);
+                    Print.PrintWithPrefix($"终止运行命令 [blue]{Markup.Escape(string.Join(" ", command))}[/]，因为收到了 Ctrl + C (OperationCanceledException)", Print.MSHead.Error, markuped: true);
                     throw;
                 }
 
